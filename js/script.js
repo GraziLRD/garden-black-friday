@@ -44,14 +44,16 @@ form.addEventListener('submit', (e) => {
             content.innerHTML = pronto;
         }, 1000)
     }
-    
-    if(!emailValido(email)) {
-        document.getElementById('spanEmailInvalido').setAttribute("style", "disable: block"); 
-    }
-
     if(!nomePreenchido(nome)) {
         document.getElementById('spanNomeInvalido').setAttribute("style", "disable: block"); 
+    } else {
+        document.getElementById('spanNomeInvalido').setAttribute("style", "disable: none");
     }
 
+    if(!emailValido(email)) {
+        document.getElementById('spanEmailInvalido').setAttribute("style", "disable: block"); 
+    } else {
+        document.getElementById('spanEmailInvalido').setAttribute("style", "disable: none");
+    }
     
 })
